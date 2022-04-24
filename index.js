@@ -5,8 +5,10 @@ const ProgressBarBuilder = require("./lib/ProgressBar");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Wrapper ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports =
-   // Time stamp to progress bar
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Time stamp to progress bar ////////////////////////////////////////////////////////////////////////////////////////////
    class TimestampToProgress {
+      // Constructor
       constructor() {
          this.duration,
          this.position,
@@ -75,12 +77,16 @@ module.exports =
          return this;
       }
    },
-   // Progress bar
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Progress bar //////////////////////////////////////////////////////////////////////////////////////////////////////////
    class ProgressBar {
+      // Constructor
       constructor() {
          this.end,
          this.position,
          this.size,
+         this.slider,
+         this.line,
          this.progressbar
       }
       // Set progress bar end
@@ -111,6 +117,26 @@ module.exports =
        */
       setSize(size) {
          this.size = size;
+         return this;
+      }
+      // Set character used for the line
+      /**
+       * Sets the character used for the line
+       * @param {String} line 
+       * @returns {TimestampToProgress}
+       */
+       setLine(line) {
+         this.line = line;
+         return this;
+      }
+      // Set character used for the slider
+      /**
+       * Sets the character used for the slider
+       * @param {String} slider 
+       * @returns {TimestampToProgress}
+       */
+      setSlider(slider) {
+         this.slider = slider;
          return this;
       }
       // Create progress bar

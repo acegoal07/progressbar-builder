@@ -1,0 +1,31 @@
+{
+  "name": "@acegoal07/progressbar-builder",
+  "version": "1.0.0",
+  "description": "A simple progress bar builder",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acegoal07/progressbar-builder.git"
+  },
+  "keywords": [
+     "acegoal07",
+     "progress bar",
+     "progress bar builder",
+     "progressbar",
+     "progressbar builder"
+  ],
+  "author": "acegoal07",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acegoal07/progressbar-builder/issues"
+  },
+  "homepage": "https://github.com/acegoal07/progressbar-builder#readme",
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
