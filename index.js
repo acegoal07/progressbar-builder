@@ -72,7 +72,7 @@ module.exports =
        * Creates the progress bar
        * @returns {TimestampToProgress}
        */
-      run() {
+      build() {
          this.progressbar = await TimeStampBarBuilder(this);
          return this;
       }
@@ -144,7 +144,7 @@ module.exports =
        * Creates the progress bar
        * @returns {ProgressBar}
        */
-      run() {
+      build() {
          this.progressbar = await ProgressBarBuilder(this);
          return this;
       }
