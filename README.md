@@ -23,7 +23,6 @@ To install use:
 npm i @acegoal07/progressbar-builder
 ```
 
-
 <h1 id="examples">Examples</h1>
 <h3>Timestamp progressbar example</h3>
 

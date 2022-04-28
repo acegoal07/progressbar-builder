@@ -3,38 +3,34 @@
 const TimeStampBarBuilder = require("./lib/TimeStampBar");
 const ProgressBarBuilder = require("./lib/ProgressBar");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Wrapper ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-module.exports =
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Time stamp to progress bar ////////////////////////////////////////////////////////////////////////////////////////////
    class TimestampToProgress {
       // Constructor
       constructor() {
-         this.duration,
-         this.position,
+         this.durTimeStamp,
+         this.posTimeStamp,
          this.size,
          this.line,
-         this.slider,
-         this.progressbar
+         this.slider
       }
-      // Set duration of progressbar
+      // Set durTimeStamp of progressbar
       /**
        * Set's the end point of the progress bar
-       * @param {String} duration - Should be formatted like a timestamp e.g. 01:11
+       * @param {String} durTimeStamp - Should be formatted like a timestamp e.g. 01:11
        * @returns {TimestampToProgress}
        */
-      setDuration(duration) {
-         this.duration = duration;
+      setDuration(durTimeStamp) {
+         this.durTimeStamp = durTimeStamp;
          return this;
       }
-      // Set progressbar position
+      // Set progressbar posTimeStamp
       /**
-       * Set's your current position on the progress bar
-       * @param {String} position - Should be formatted like a timestamp e.g. 01:11
+       * Set's your current posTimeStamp on the progress bar
+       * @param {String} posTimeStamp - Should be formatted like a timestamp e.g. 01:11
        * @returns {TimestampToProgress}
        */
-      setPosition(position) {
-         this.position = position;
+      setPosition(posTimeStamp) {
+         this.posTimeStamp = posTimeStamp;
          return this;
       }
       // Set bar size
@@ -72,22 +68,20 @@ module.exports =
        * Creates the progress bar
        * @returns {TimestampToProgress}
        */
-      build() {
-         this.progressbar = await TimeStampBarBuilder(this);
-         return this;
+      async build() {
+         return await TimeStampBarBuilder(this);
       }
-   },
+   }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Progress bar //////////////////////////////////////////////////////////////////////////////////////////////////////////
    class ProgressBar {
       // Constructor
       constructor() {
          this.end,
-         this.position,
+         this.posTimeStamp,
          this.size,
          this.slider,
-         this.line,
-         this.progressbar
+         this.line
       }
       // Set progress bar end
       /**
@@ -99,14 +93,14 @@ module.exports =
          this.end = end;
          return this;
       }
-      // Set progress bar position
+      // Set progress bar posTimeStamp
       /**
-       * Set's your current position on the progress bar
-       * @param {Number} position 
+       * Set's your current posTimeStamp on the progress bar
+       * @param {Number} posTimeStamp 
        * @returns {ProgressBar}
        */
-      setPosition(position) {
-         this.position = position;
+      setPosition(posTimeStamp) {
+         this.posTimeStamp = posTimeStamp;
          return this;
       }
       // Set progress bar size
@@ -144,8 +138,10 @@ module.exports =
        * Creates the progress bar
        * @returns {ProgressBar}
        */
-      build() {
-         this.progressbar = await ProgressBarBuilder(this);
-         return this;
+      async build() {
+         return await ProgressBarBuilder(this);
       }
    }
+
+   
+   module.exports = { TimestampToProgress, ProgressBar };
