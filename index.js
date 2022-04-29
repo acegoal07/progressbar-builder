@@ -48,7 +48,7 @@ class TimestampToProgress {
    // Set character used for the line
    /**
     * Sets the character used for the line
-    * @param {String} line 
+    * @param {String} line
     * @returns {TimestampToProgress}
     */
    setLine(line) {
@@ -58,7 +58,7 @@ class TimestampToProgress {
    // Set character used for the slider
    /**
     * Sets the character used for the slider
-    * @param {String} slider 
+    * @param {String} slider
     * @returns {TimestampToProgress}
     */
    setSlider(slider) {
@@ -109,7 +109,7 @@ class ProgressBar {
    // Set progress bar end
    /**
     * Sets when the progress bar ends
-    * @param {Number} end 
+    * @param {Number} end
     * @returns {ProgressBar}
     */
    setEnd(end) {
@@ -119,7 +119,7 @@ class ProgressBar {
    // Set progress bar posTimeStamp
    /**
     * Set's your current posTimeStamp on the progress bar
-    * @param {Number} posTimeStamp 
+    * @param {Number} posTimeStamp
     * @returns {ProgressBar}
     */
    setPosition(posTimeStamp) {
@@ -129,7 +129,7 @@ class ProgressBar {
    // Set progress bar size
    /**
     * Sets how many characters long the progress bar is
-    * @param {Number} size 
+    * @param {Number} size
     * @returns {ProgressBar}
     */
    setSize(size) {
@@ -139,7 +139,7 @@ class ProgressBar {
    // Set character used for the line
    /**
     * Sets the character used for the line
-    * @param {String} line 
+    * @param {String} line
     * @returns {ProgressBar}
     */
       setLine(line) {
@@ -149,7 +149,7 @@ class ProgressBar {
    // Set character used for the slider
    /**
     * Sets the character used for the slider
-    * @param {String} slider 
+    * @param {String} slider
     * @returns {ProgressBar}
     */
    setSlider(slider) {
@@ -180,9 +180,10 @@ class ProgressBar {
     * @returns {ProgressBar}
     */
    async build() {
-      return await ProgressBarBuilder(this);
+      const bar = await ProgressBarBuilder(this);
+      return bar;
    }
 }
-
-   
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Exporter //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = { TimestampToProgress, ProgressBar };

@@ -32,9 +32,11 @@ const { TimestampToProgress } = require("@acegoal07/progressbar-builder");
 const bar = new TimestampToProgress()
    .setDuration("01:58") // Required option - supports hour timestamps
    .setPosition("01:00") // Required option - supports hour timestamps
-   .setSize(10) // Optional - allows you to adjust how large the bar is
-   .setLine("*") // Optional - allows you to set a custom character for the line
-   .setSlider("#") // Optional - allows you to set a custom character for the slider
+   .setSize(10) // Optional - Allows you to adjust how large the bar is
+   .setLine("*") // Optional - Allows you to set a custom character for the line
+   .setSlider("#") // Optional - Allows you to set a custom character for the slider
+   .enableHideInfo() // Optional - Hide progress info and only shows the bar
+   .enablePercentage() // Optional - Replaces the progress info with a percentage of completion
    .build(); // Required to create bar
 
 console.log(bar);
@@ -47,9 +49,11 @@ const { ProgressBar } = require("@acegoal07/progressbar-builder");
 const bar = new ProgressBar()
    .setEnd(10) // Required option
    .setPosition(4) // Required option
-   .setSize(10) // Optional allows you to adjust how large the bar is
-   .setLine("*") // Optional - allows you to set a custom character for the line
-   .setSlider("#") // Optional - allows you to set a custom character for the slider
+   .setSize(10) // Optional Allows you to adjust how large the bar is
+   .setLine("*") // Optional - Allows you to set a custom character for the line
+   .setSlider("#") // Optional - Allows you to set a custom character for the slider
+   .enableHideInfo() // Optional - Hide progress info and only shows the bar
+   .enablePercentage() // Optional - Replaces the progress info with a percentage of completion
    .build(); // Required to create bar
 
 console.log(bar);
