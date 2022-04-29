@@ -12,7 +12,8 @@ class TimestampToProgress {
       this.size,
       this.line,
       this.slider,
-      this.hideInfo
+      this.hideInfo,
+      this.percentage
    }
    // Set durTimeStamp of progressbar
    /**
@@ -73,6 +74,15 @@ class TimestampToProgress {
       this.hideInfo = true;
       return this;
    }
+   // Enable percentage
+   /**
+    * Replaces the progress indicator with a percentage
+    * @returns {TimestampToProgress}
+    */
+   enablePercentage() {
+      this.percentage = true;
+      return this;
+   }
    // Create progress bar
    /**
     * Creates the progress bar
@@ -93,7 +103,8 @@ class ProgressBar {
       this.size,
       this.slider,
       this.line,
-      this.hideInfo
+      this.hideInfo,
+      this.percentage
    }
    // Set progress bar end
    /**
@@ -152,6 +163,15 @@ class ProgressBar {
     */
    enableHideInfo() {
       this.hideInfo = true;
+      return this;
+   }
+   // Enable percentage
+   /**
+    * Replaces the progress indicator with a percentage
+    * @returns {ProgressBar}
+    */
+   enablePercentage() {
+      this.percentage = true;
       return this;
    }
    // Create progress bar
