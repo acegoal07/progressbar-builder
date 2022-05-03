@@ -36,7 +36,7 @@ const bar = new TimestampToProgress()
    .setLine("*") // Optional - Allows you to set a custom character for the line
    .setSlider("#") // Optional - Allows you to set a custom character for the slider
    .enableHideInfo() // Optional - Hide progress info and only shows the bar
-   .enablePercentage() // Optional - Replaces the progress info with a percentage of completion
+   .enablePercentageInfo() // Optional - Replaces the progress info with a percentage of completion
    .build(); // Required to create bar
 
 console.log(bar);
@@ -53,7 +53,7 @@ const bar = new ProgressBar()
    .setLine("*") // Optional - Allows you to set a custom character for the line
    .setSlider("#") // Optional - Allows you to set a custom character for the slider
    .enableHideInfo() // Optional - Hide progress info and only shows the bar
-   .enablePercentage() // Optional - Replaces the progress info with a percentage of completion
+   .enablePercentageInfo() // Optional - Replaces the progress info with a percentage of completion
    .build(); // Required to create bar
 
 console.log(bar);

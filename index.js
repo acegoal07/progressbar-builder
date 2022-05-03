@@ -13,7 +13,7 @@ class TimestampToProgress {
       this.line,
       this.slider,
       this.hideInfo,
-      this.percentage
+      this.percentageInfo
    }
    // Set durTimeStamp of progressbar
    /**
@@ -79,8 +79,8 @@ class TimestampToProgress {
     * Replaces the progress indicator with a percentage
     * @returns {TimestampToProgress}
     */
-   enablePercentage() {
-      this.percentage = true;
+   enablePercentageInfo() {
+      this.percentageInfo = true;
       return this;
    }
    // Create progress bar
@@ -89,8 +89,8 @@ class TimestampToProgress {
     * @returns {TimestampToProgress}
     */
    async build() {
-      const bar = await TimeStampBarBuilder(this);
-      return bar;
+      
+      return await TimeStampBarBuilder(this);
    }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,7 +104,7 @@ class ProgressBar {
       this.slider,
       this.line,
       this.hideInfo,
-      this.percentage
+      this.percentageInfo
    }
    // Set progress bar end
    /**
@@ -170,8 +170,8 @@ class ProgressBar {
     * Replaces the progress indicator with a percentage
     * @returns {ProgressBar}
     */
-   enablePercentage() {
-      this.percentage = true;
+   enablePercentageInfo() {
+      this.percentageInfo = true;
       return this;
    }
    // Create progress bar
@@ -180,8 +180,7 @@ class ProgressBar {
     * @returns {ProgressBar}
     */
    async build() {
-      const bar = await ProgressBarBuilder(this);
-      return bar;
+      return await ProgressBarBuilder(this);
    }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
