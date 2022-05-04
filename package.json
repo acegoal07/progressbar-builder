@@ -1,6 +1,6 @@
 {
   "name": "@acegoal07/progressbar-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple progress bar builder",
   "main": "index.js",
   "repository": {
