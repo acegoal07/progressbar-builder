@@ -99,7 +99,7 @@ class ProgressBar {
    // Constructor
    constructor() {
       this.end,
-      this.posTimeStamp,
+      this.position,
       this.size,
       this.slider,
       this.line,
@@ -116,14 +116,14 @@ class ProgressBar {
       this.end = end;
       return this;
    }
-   // Set progress bar posTimeStamp
+   // Set progress bar position
    /**
-    * Set's your current posTimeStamp on the progress bar
-    * @param {Number} posTimeStamp
+    * Set's your current position on the progress bar
+    * @param {Number} pposition
     * @returns {ProgressBar}
     */
-   setPosition(posTimeStamp) {
-      this.posTimeStamp = posTimeStamp;
+   setPosition(position) {
+      this.position = position;
       return this;
    }
    // Set progress bar size
