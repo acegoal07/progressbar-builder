@@ -19,7 +19,7 @@
 <h1 id="about">About</h1>
 
 To install use:
-```js
+```sh
 npm i @acegoal07/progressbar-builder
 ```
 
