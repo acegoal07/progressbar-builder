@@ -2,7 +2,7 @@
   "name": "@acegoal07/progressbar-builder",
   "version": "1.0.2",
   "description": "A simple progress bar builder",
-  "main": "index.js",
+  "main": "index",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acegoal07/progressbar-builder.git"
