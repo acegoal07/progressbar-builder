@@ -89,7 +89,6 @@ class TimestampToProgress {
     * @returns {TimestampToProgress}
     */
    async build() {
-      
       return await TimeStampBarBuilder(this);
    }
 }
@@ -119,7 +118,7 @@ class ProgressBar {
    // Set progress bar position
    /**
     * Set's your current position on the progress bar
-    * @param {Number} pposition
+    * @param {Number} position
     * @returns {ProgressBar}
     */
    setPosition(position) {
