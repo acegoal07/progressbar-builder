@@ -1,35 +1,38 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Dependencies //////////////////////////////////////////////////////////////////////////////////////////////////////////
-const TimeStampBarBuilder = require("./lib/TimeStampBarBuilder");
-const ProgressBarBuilder = require("./lib/ProgressBarBuilder");
+const { TimeStampBarBuilder } = require("./lib/TimeStampBarBuilder");
+const { ProgressBarBuilder } = require("./lib/ProgressBarBuilder");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Time stamp to progress bar ////////////////////////////////////////////////////////////////////////////////////////////
-class TimestampToProgress {
+/**
+ * The class used to create progressBars from timestamps
+ */
+exports.TimestampToProgress = class {
    // Constructor
    constructor() {
-      this.durTimeStamp,
-      this.posTimeStamp,
-      this.size,
-      this.line,
-      this.slider,
-      this.hideInfo,
-      this.percentageInfo
+      this.durTimeStamp = null
+      this.posTimeStamp = null
+      this.size = 40
+      this.line = "▢"
+      this.slider = "▣"
+      this.hideInfo = false
+      this.percentageInfo = false
    }
-   // Set durTimeStamp of progressbar
+   // Set durTimeStamp of progressBar
    /**
     * Set's the end point of the progress bar
     * @param {String} durTimeStamp - Should be formatted like a timestamp e.g. 01:11
-    * @returns {TimestampToProgress}
+    * @returns {exports.TimestampToProgress}
     */
    setDuration(durTimeStamp) {
       this.durTimeStamp = durTimeStamp;
       return this;
    }
-   // Set progressbar posTimeStamp
+   // Set progressBar posTimeStamp
    /**
     * Set's your current posTimeStamp on the progress bar
     * @param {String} posTimeStamp - Should be formatted like a timestamp e.g. 01:11
-    * @returns {TimestampToProgress}
+    * @returns {exports.TimestampToProgress}
     */
    setPosition(posTimeStamp) {
       this.posTimeStamp = posTimeStamp;
@@ -39,7 +42,7 @@ class TimestampToProgress {
    /**
     * Set's how long the progress bar is
     * @param {Number} size
-    * @returns {TimestampToProgress}
+    * @returns {exports.TimestampToProgress}
     */
    setSize(size) {
       this.size = size;
@@ -49,7 +52,7 @@ class TimestampToProgress {
    /**
     * Sets the character used for the line
     * @param {String} line
-    * @returns {TimestampToProgress}
+    * @returns {exports.TimestampToProgress}
     */
    setLine(line) {
       this.line = line;
@@ -59,7 +62,7 @@ class TimestampToProgress {
    /**
     * Sets the character used for the slider
     * @param {String} slider
-    * @returns {TimestampToProgress}
+    * @returns {exports.TimestampToProgress}
     */
    setSlider(slider) {
       this.slider = slider;
@@ -68,7 +71,7 @@ class TimestampToProgress {
    // Enable hide info
    /**
     * Enables hide info which hides the progress indicator and only shows the ba
-    * @returns {TimestampToProgress}
+    * @returns {exports.TimestampToProgress}
     */
    enableHideInfo() {
       this.hideInfo = true;
@@ -77,7 +80,7 @@ class TimestampToProgress {
    // Enable percentage
    /**
     * Replaces the progress indicator with a percentage
-    * @returns {TimestampToProgress}
+    * @returns {exports.TimestampToProgress}
     */
    enablePercentageInfo() {
       this.percentageInfo = true;
@@ -86,7 +89,7 @@ class TimestampToProgress {
    // Create progress bar
    /**
     * Creates the progress bar
-    * @returns {TimestampToProgress}
+    * @returns {TimeStampBarBuilder}
     */
    async build() {
       return await TimeStampBarBuilder(this);
@@ -94,22 +97,25 @@ class TimestampToProgress {
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Progress bar //////////////////////////////////////////////////////////////////////////////////////////////////////////
-class ProgressBar {
+/**
+ * The class used to create progressBars from 2 numbers
+ */
+exports.ProgressBar = class {
    // Constructor
    constructor() {
-      this.end,
-      this.position,
-      this.size,
-      this.slider,
-      this.line,
-      this.hideInfo,
-      this.percentageInfo
+      this.end = null
+      this.position = null
+      this.size = 40
+      this.slider = "▣"
+      this.line = "▢"
+      this.hideInfo = false
+      this.percentageInfo = false
    }
    // Set progress bar end
    /**
     * Sets when the progress bar ends
     * @param {Number} end
-    * @returns {ProgressBar}
+    * @returns {exports.ProgressBar}
     */
    setEnd(end) {
       this.end = end;
@@ -119,7 +125,7 @@ class ProgressBar {
    /**
     * Set's your current position on the progress bar
     * @param {Number} position
-    * @returns {ProgressBar}
+    * @returns {exports.ProgressBar}
     */
    setPosition(position) {
       this.position = position;
@@ -129,7 +135,7 @@ class ProgressBar {
    /**
     * Sets how many characters long the progress bar is
     * @param {Number} size
-    * @returns {ProgressBar}
+    * @returns {exports.ProgressBar}
     */
    setSize(size) {
       this.size = size;
@@ -139,7 +145,7 @@ class ProgressBar {
    /**
     * Sets the character used for the line
     * @param {String} line
-    * @returns {ProgressBar}
+    * @returns {exports.ProgressBar}
     */
       setLine(line) {
       this.line = line;
@@ -149,7 +155,7 @@ class ProgressBar {
    /**
     * Sets the character used for the slider
     * @param {String} slider
-    * @returns {ProgressBar}
+    * @returns {exports.ProgressBar}
     */
    setSlider(slider) {
       this.slider = slider;
@@ -158,7 +164,7 @@ class ProgressBar {
    // Enable hide info
    /**
     * Enables hide info which hides the progress indicator and only shows the ba
-    * @returns {ProgressBar}
+    * @returns {exports.ProgressBar}
     */
    enableHideInfo() {
       this.hideInfo = true;
@@ -167,7 +173,7 @@ class ProgressBar {
    // Enable percentage
    /**
     * Replaces the progress indicator with a percentage
-    * @returns {ProgressBar}
+    * @returns {exports.ProgressBar}
     */
    enablePercentageInfo() {
       this.percentageInfo = true;
@@ -176,12 +182,9 @@ class ProgressBar {
    // Create progress bar
    /**
     * Creates the progress bar
-    * @returns {ProgressBar}
+    * @returns {ProgressBarBuilder}
     */
    async build() {
       return await ProgressBarBuilder(this);
    }
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Exporter //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-module.exports = { TimestampToProgress, ProgressBar };

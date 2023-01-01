@@ -1,0 +1,12 @@
+{
+  "include": ["index.js", "./lib/"],
+  "compilerOptions": {
+    "strict": true,
+    "lib": ["es2018", "dom"],
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true
+  }
+}
