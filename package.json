@@ -1,6 +1,6 @@
 {
   "name": "@acegoal07/progressbar-builder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple progress bar builder",
   "main": "index",
   "repository": {
@@ -23,7 +23,9 @@
   "dependencies": {
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx -p typescript tsc src/index.js --declaration --allowJs --emitDeclarationOnly --outDir types && npm run tscBuild",
+    "tscBuild": "npx tsc && npm run copy",
+    "copy": "xcopy /s/y src dist && xcopy /y package.json dist && xcopy /y readme.md dist && xcopy /y lICENSE dist"
   },
   "publishConfig": {
     "access": "public"
