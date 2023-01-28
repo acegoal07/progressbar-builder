@@ -24,10 +24,10 @@ exports.ProgressBarBuilder = (settings = {end: null, position: null, size: 40, l
    const percentage = settings.position / settings.end;
    // Progress Calculations
    const progress = Math.round((settings.size * percentage));
-   const progressText = slider.repeat(progress);
+   const progressText = settings.slider.repeat(progress);
    // To go calculations
    const emptyProgress = settings.size - progress;
-   const emptyProgressText = line.repeat(emptyProgress);
+   const emptyProgressText = settings.line.repeat(emptyProgress);
    // Progress bar output
    const barInfo = !settings.percentageInfo ? (settings.position+' / '+settings.end) : `${percentage * 100}%`;
    return Promise.resolve(`[${progressText+emptyProgressText}] `+`${settings.hideInfo ? barInfo : ""}`);

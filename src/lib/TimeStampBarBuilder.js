@@ -32,8 +32,8 @@ exports.TimeStampBarBuilder = async(settings = {posTimeStamp: null, durTimeStamp
   const progress = Math.round((settings.size * position));
   const emptyProgress = settings.size - progress;
   // Progress text
-  const progressText = slider.repeat(progress);
-  const emptyProgressText = line.repeat(emptyProgress);
+  const progressText = settings.slider.repeat(progress);
+  const emptyProgressText = settings.line.repeat(emptyProgress);
   // Bar output
   const barInfo = !settings.percentageInfo ? (settings.posTimeStamp+' / '+settings.durTimeStamp) : `${position * 100}%`;
   return Promise.resolve(`${!settings.hideInfo ? barInfo : ''}`+'\r'+'['+progressText+emptyProgressText+']');
