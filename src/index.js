@@ -92,7 +92,7 @@ exports.TimestampToProgress = class {
     * @returns {TimeStampBarBuilder}
     */
    async build() {
-      return await TimeStampBarBuilder(this);
+      return TimeStampBarBuilder(this);
    }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -185,6 +185,6 @@ exports.ProgressBar = class {
     * @returns {ProgressBarBuilder}
     */
    async build() {
-      return await ProgressBarBuilder(this);
+      return ProgressBarBuilder(this);
    }
 }
