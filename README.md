@@ -22,6 +22,10 @@ To install use:
 ```sh
 npm i @acegoal07/progressbar-builder
 ```
+yarn
+```sh
+yarn add @acegoal07/progressbar-builder
+```
 
 <h1 id="examples">Examples</h1>
 <h3>Timestamp progressbar example</h3>
